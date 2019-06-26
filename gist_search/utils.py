@@ -9,3 +9,10 @@ def get_gists(username):
     if not resp.ok:
         return None
     return resp.json()
+
+gists = get_gists("santiagobasulto")
+first_gist = gists[0]
+first_3 = gists[:3]
+#print(first_gist)
+for gist in first_3:
+    print("{:<40} | {}".format(gist['id'],gist['description']))
